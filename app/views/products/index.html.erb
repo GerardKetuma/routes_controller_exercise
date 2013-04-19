@@ -1,5 +1,18 @@
+<% product = Product.where("price > 1").first %>
+<% first_product = Product.first %>
 <h2> I AM A View </h2>
 <h2>Hello World</h2>
 <p>
   Find me in <%= Rails.root.join("app", "views", "products", __FILE__ ) %>
 </p>
+<p>
+  Product Name: "<%= first_product.name %>" costs $<%= first_product.price %>
+</p>
+<p>
+  The owner of this product is <%= first_product.user.name %>
+</p>
+<p>
+  Product Name: "<%= product.name %>", Product Price: $<%= product.price %>, and
+  Product Owner: "<%= product.user.name %>"
+</p>
+<p>There are <%= Product.count %> products in the database.</p>
